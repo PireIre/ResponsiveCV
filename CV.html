@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset="utf-8">
+	<title>SDA HTML/CSS Project</title>
+
+		<link rel="stylesheet" type="text/css" href="css/all.min.css?ver=<?php echo rand(111,999)?>">
+	<link rel="stylesheet" type="text/css" href="css/fontawesome.min.css?ver=<?php echo rand(111,999)?>">
+	
+
+	<link rel="stylesheet" type="text/css" href="css/styles.css?ver=<?php echo rand(111,999)?>">
+
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+	<script>
+	$(document).ready(function(){
+			$(".full_info_wrap .tabs ul li").click(function(){
+				$(".full_info_wrap .tabs ul li").removeClass("active");
+				$(this).addClass("active");
+
+				var datali = $(this).attr("data-li");
+
+				$(".full_info_item").hide();
+
+				if(datali == "experience"){
+					$(".experience").show();
+				}
+				else if(datali == "education"){
+					$(".education").show();
+				}
+				else if(datali == "contact"){
+					$(".contact").show();
+				}
+				else{
+					console.log("loading...");
+				}
+			})
+		})
+	</script>
+</head>
+<body>
+
+	<div class = "wrapper">
+		<div class = "resume">
+
+			<div class = "profile_info">
+				<div class="profile_img">
+					<img src="circle-cropped.png" alt= "Profile_pic">
+				</div>
+				<div class="profile_data">
+					<p class= "name"> Irenej Bozovicar </p>
+					<span>Stockholm, Sweden</span>
+				</div>
+			</div>
+
+			<div class = "skills">
+				<div class="title">
+					Skills:
+				</div>
+				<ul>
+					<li>
+						<div class="skill_item Java">
+							<div class="icon">	<i class="fab fa-java" style="font-size:30px"></i></div>
+							<div class="text">Java</div>
+						</div>
+					</li>
+					<li>
+						<div class="skill_item JavaScript">
+							<div class="icon"><i class="fab fa-js" style="font-size:30px"></i></div>
+							<div class="text">JavaScript</div>
+						</div>
+					</li>
+					<li>
+						<div class="skill_item html">
+							<div class="icon"><i class="fab fa-html5" style="font-size:30px"></i></div>
+							<div class="text">HTML</div>
+						</div>
+					</li>
+					<li>
+						<div class="skill_item css">
+							<div class="icon"><i class="fab fa-css3-alt" style="font-size:30px"></i></div>
+							<div class="text">CSS</div>
+						</div>
+					</li>
+					<li>
+						<div class="skill_item MySQL">
+							<div class="icon"><i class="fas fa-database" style="font-size:30px"></i></div>
+							<div class="text">MySQL</div>
+						</div>
+					</li>
+					<li>
+						<div class="skill_item WordPress">
+							<div class="icon"><i class="fab fa-wordpress" style="font-size:30px"></i></div>
+							<div class="text">WordPress</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<div class="full_info_wrap">
+				<div class="tabs">
+					<ul>
+						<li data-li="experience" class="active">Experience</li>
+						<li data-li="education">Education</li>
+						<li data-li="contact">Contact</li>
+					</ul>
+				</div>
+
+				<div class="full_info">
+					<div class="full_info_item experience">
+						<div class ="title">Work Experience:</div>
+
+						<div class="info_wrap">
+							<ul>
+								<li>
+									<div class="sub_title">
+										2018 - 2020
+									</div>
+
+									<div class="info_item">
+										<div class="info_item">
+											<div class="info_title">
+												Actic
+											</div>
+											<div class="data">
+												I helped clients to achieve their health goals and provided feedback and accountability.
+											</div>
+										</div>
+										
+									</div>
+								</li>
+								<li>
+									<div class="sub_title">
+										2017 - 2018
+									</div>
+
+									<div class="info_item">
+										<div class="info_item">
+											<div class="info_title">
+												Resident Assistant
+											</div>
+											<div class="data">
+												I supervised a floor of 70 residents. I worked with 18 other Residents Assistants in a building of 700 residents.
+											</div>
+										</div>
+										
+									</div>
+								</li>
+								<li>
+									<div class="sub_title">
+										2018 - Present
+									</div>
+
+									<div class="info_item">
+										<div class="info_item">
+											<div class="info_title">
+												Track and Field Coach
+											</div>
+											<div class="data">
+												I coach throwing events for children of age of 10-16
+											</div>
+										</div>
+										
+									</div>
+								</li>
+								<li>
+									<div class="sub_title">
+										Summer 2018
+									</div>
+
+									<div class="info_item">
+										<div class="info_item">
+											<div class="info_title">
+												Hotel Receptionist
+											</div>
+											<div class="data">
+												I helped customers upon arrival to the hotel. I dealt with money and administration.
+											</div>
+										</div>
+										
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+						<div class="full_info_item education" style="display:none;">
+						<div class ="title">Education:</div>
+
+						<div class="info_wrap">
+							<ul>
+								<li>
+									<div class="sub_title">
+										2020 - Present
+									</div>
+
+									<div class="info_item">
+										<div class="info_item">
+											<div class="info_title">
+												KTH - Software Development Academy
+											</div>
+											<div class="data">
+												Collaboration between KTH and recruitment company Novare. Education consists of 500 hours of coding with big emphasis on Java.
+											</div>
+										</div>
+										
+									</div>
+								</li>
+								<li>
+									<div class="sub_title">
+										2014 - 2018
+									</div>
+
+									<div class="info_item">
+										<div class="info_item">
+											<div class="info_title">
+												Manhattan College - Bachelor In Kinesiology
+											</div>
+											<div class="data">
+												Education was possible due to receiving athletics scholarship.
+											</div>
+										</div>
+										
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+						<div class="full_info_item contact" style="display:none;">
+						<div class ="title">Contact:</div>
+
+						<div class="info_wrap">
+							<ul>
+								<li>
+									<span class="info_q">
+										Email
+									</span>
+									<span class="info_a">
+										bozoire@gmail.com
+									</span>
+								</li>
+								<li>
+									<span class="info_q">
+										Phone
+									</span>
+									<span class="info_a">
+										+ 46 70 280 41 61
+									</span>
+								</li>
+								<li>
+									<span class="info_q">
+										Address
+									</span>
+									<span class="info_a">
+										Täby, Sweden
+									</span>
+								</li>
+								<li>
+									<span class="info_q">
+										LinkedIn
+									</span>
+									<span class="info_a">
+										<a href="https://www.linkedin.com/in/irenej-bozovicar-764a75123/">
+										/Irenej-Bozovicar</a>
+									</span>
+								</li>
+								<li>
+									<span class="info_q">
+										GitHub
+									</span>
+									<span class="info_a"> 						   <a href="https://github.com/PireIre">
+												/PireIre<a>
+									</span>
+								</li>
+
+							</ul>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</body>
+</html>
