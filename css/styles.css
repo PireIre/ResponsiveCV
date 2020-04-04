@@ -55,11 +55,6 @@ body{
 	color: #697c8e;
 }
 
-
-.resume .profile_info .view_more_btn a:hover {
-	background: #7377ff;
-}
-
 .resume .title{
 	font-size: 16px;
 	font-weight: 700;
@@ -89,15 +84,39 @@ body{
   padding: 15px 10px;
 }
 
+
 .skills ul li .skill_item .icon {
 	font-size: 30px;
 	width: 20px;
 	height: 22px;
 	margin: 0 auto 5px;
+	position: relative;
 }
 
 .skills ul li .skill_item .text {
 	padding-top: 10px;
+}
+
+.skills ul li .skill_item .skill_progress {
+	position: relative;
+	bottom: 60px;
+	font-size: 50px;
+	left: 5px;
+	color: 	#303030;
+	font-family: 'sans-serif';
+	visibility: hidden;
+}
+
+.skills ul li:hover .skill_item .skill_progress {
+	visibility: visible;
+}
+
+.skills ul li:hover .skill_item .icon {
+	visibility: hidden;
+}
+
+.skills ul li:hover .skill_item .text {
+	visibility: hidden;
 }
 
 .full_info_wrap .tabs ul{
