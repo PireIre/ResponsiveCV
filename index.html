@@ -91,6 +91,17 @@
 
           $(this).find("i").toggleClass("fa-moon fa-sun");
         });
+
+        // Hide scroll indicator when user scrolls down
+        function toggleScrollIndicator() {
+          if ($(window).scrollTop() > 40) {
+            $(".scroll-indicator").addClass("hide");
+          } else {
+            $(".scroll-indicator").removeClass("hide");
+          }
+        }
+        toggleScrollIndicator();
+        $(window).on("scroll resize", toggleScrollIndicator);
       });
     </script>
   </head>
@@ -129,6 +140,11 @@
             </p>
           </div>
         </div>
+        <div style="text-align: center; margin: 10px 0 20px 0">
+          <a href="Irenej_Bozovicar_CV.pdf" download class="download-cv-btn"
+            >Download CV (PDF)</a
+          >
+        </div>
 
         <div class="skills">
           <div class="title">Skills</div>
@@ -151,7 +167,7 @@
               <div class="skill_item tech">
                 <div class="icon"><i class="fas fa-code-branch"></i></div>
                 <div class="text">Technical Support</div>
-                <div class="skill_progress">90%</div>
+                <div class="skill_progress">100%</div>
               </div>
             </li>
             <li>
@@ -162,10 +178,10 @@
               </div>
             </li>
             <li>
-              <div class="skill_item react">
-                <div class="icon"><i class="fab fa-react"></i></div>
-                <div class="text">React</div>
-                <div class="skill_progress">75%</div>
+              <div class="skill_item technical-documentation">
+                <div class="icon"><i class="fas fa-file"></i></div>
+                <div class="text">Tech Docs</div>
+                <div class="skill_progress">80%</div>
               </div>
             </li>
             <li>
@@ -225,14 +241,16 @@
                       </div>
                       <div class="data">
                         - Serve as the dedicated Technical POC for top
-                        enterprise clients<br />
+                        enterprise clients, leading and working on projects for
+                        clients including Zara, LVMH, Currys, Elkjop, Adidas,
+                        Clarins, and others that cannot be named due to NDA<br />
                         - Enhance the External Demo website<br />
                         - Revamp external technical documentation for clarity<br />
                         - Collaborate with internal teams to increase customer
                         satisfaction<br />
                         - Develop an internal tool for seamless product demos on
                         customer sites<br />
-                        - Create comprehensive Integration Tutorial Videos
+                        - Create comprehensive Integration Tutorial Videos<br />
                       </div>
                     </div>
                   </li>
@@ -246,6 +264,22 @@
                         - Provided technical consulting for enterprise
                         clients<br />
                         - Developed internal tools to streamline processes
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="sub_title">June 2020 - March 2022</div>
+
+                    <div class="info_item">
+                      <div class="info_title">
+                        Integration Support Specialist | Bambuser
+                      </div>
+                      <div class="data">
+                        - Manage and resolve support tickets efficiently<br />
+                        - Lead technical meetings, ensuring smooth communication
+                        with clients<br />
+                        - Improve onboarding process for new hires<br />
+                        - Rewrite technical documentation in a new frameworks
                       </div>
                     </div>
                   </li>
@@ -329,6 +363,16 @@
                       </div>
                     </div>
                   </li>
+                  <li>
+                    <div class="sub_title">2011 - 2014</div>
+
+                    <div class="info_item">
+                      <div class="info_title">Gimnazija Jesenice</div>
+                      <div class="data">
+                        Spričevalo o splošni maturi, General Studies
+                      </div>
+                    </div>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -343,9 +387,8 @@
                     <div class="info_item">
                       <div class="info_title">GitHub Profile</div>
                       <div class="data">
-                        A collection of personal and professional coding
-                        projects showcasing my technical skills and development
-                        journey.<br />
+                        A collection of personal coding projects showcasing my
+                        technical skills and development journey.<br />
                         <a href="https://github.com/PireIre" target="_blank"
                           >View on GitHub</a
                         >
@@ -360,7 +403,12 @@
                       <div class="data">
                         Developed an internal tool at Bambuser for seamless
                         product demos on customer sites, simplifying the
-                        integration process for clients.
+                        integration process for clients.<br />
+                        This is a Google Chrome extension used to debug and demo
+                        our projects directly on customer websites.
+                        Additionally, there is an internal demo app on our demo
+                        shop where salespeople can customize their demos
+                        themselves.
                       </div>
                     </div>
                   </li>
@@ -372,10 +420,12 @@
                         Technical Documentation Revamp
                       </div>
                       <div class="data">
-                        Led the project to completely revise and improve
-                        Bambuser's external technical documentation, enhancing
-                        clarity and usability for developers integrating the
-                        platform.
+                        Revamped Bambuser's external technical
+                        documentation—improving clarity, usability, and
+                        infrastructure.<br />
+                        <a href="https://bambuser.com/docs/" target="_blank"
+                          >View the live documentation project here.</a
+                        >
                       </div>
                     </div>
                   </li>
@@ -389,7 +439,11 @@
                 <ul>
                   <li>
                     <span class="info_q"> Email </span>
-                    <span class="info_a"> bozoire@gmail.com </span>
+                    <span class="info_a">
+                      <a href="mailto:bozoire@gmail.com" target="_blank"
+                        >bozoire@gmail.com</a
+                      >
+                    </span>
                   </li>
                   <li>
                     <span class="info_q"> Location </span>
@@ -422,6 +476,9 @@
       </div>
       <div class="footer">
         <p>© 2025 Irenej Bozovicar. All rights reserved.</p>
+      </div>
+      <div class="scroll-indicator" aria-hidden="true">
+        <i class="fas fa-chevron-down"></i>
       </div>
     </div>
   </body>

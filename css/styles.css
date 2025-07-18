@@ -290,24 +290,34 @@ body.light-mode {
 
 .full_info {
   padding-top: 20px;
-  max-height: 500px;
-  overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: var(--accent-color) var(--info-bg);
+  /* max-height: 500px; */
+  /* overflow-y: auto; */
+  position: relative;
 }
-
-.full_info::-webkit-scrollbar {
-  width: 8px;
-}
-
-.full_info::-webkit-scrollbar-track {
-  background: var(--info-bg);
-  border-radius: 4px;
-}
-
+.full_info::-webkit-scrollbar,
+.full_info::-webkit-scrollbar-track,
 .full_info::-webkit-scrollbar-thumb {
-  background-color: var(--accent-color);
-  border-radius: 4px;
+  display: none;
+}
+.full_info::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 40px;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    var(--card-color) 90%
+  );
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.full_info.has-fade::after {
+  opacity: 1;
 }
 
 .full_info_wrap .full_info .title {
@@ -416,13 +426,81 @@ body.light-mode {
   color: var(--secondary-text);
 }
 
-.info_wrap .info_a a {
+a {
   color: var(--accent-color);
-  transition: color 0.3s ease;
+  font-weight: 700;
+  text-decoration: underline;
+  text-shadow: 0 1px 0 var(--card-color);
+  transition: color 0.3s, text-shadow 0.3s;
 }
 
-.info_wrap .info_a a:hover {
-  color: var(--text-color);
+a:hover,
+a:focus {
+  color: #fff;
+  text-shadow: 0 0 6px var(--accent-color);
+  outline: none;
+}
+
+.download-cv-btn {
+  display: inline-block;
+  background: var(--accent-color);
+  color: #fff !important;
+  padding: 12px 32px;
+  border-radius: 3px;
+  font-size: 1.1em;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+  margin: 0 auto;
+  border: none;
+  outline: none;
+}
+.download-cv-btn:hover,
+.download-cv-btn:focus {
+  background: #b92c36; /* slightly darker accent for hover, works for both themes */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  transform: translateY(-2px) scale(1.04);
+  color: #fff;
+  text-decoration: none;
+}
+
+.scroll-indicator {
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  z-index: 200;
+  background: var(--card-color);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  padding: 16px 18px 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.85;
+  cursor: pointer;
+  transition: opacity 0.3s, transform 0.3s;
+  animation: bounce-down 1.5s infinite;
+}
+.scroll-indicator i {
+  font-size: 2rem;
+  color: var(--accent-color);
+}
+@keyframes bounce-down {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(12px);
+  }
+}
+.scroll-indicator.hide {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(30px);
 }
 
 @media (max-width: 768px) {

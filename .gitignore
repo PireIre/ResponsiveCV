@@ -1,0 +1,24 @@
+# Python virtual environments
+venv/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# macOS system files
+.DS_Store
+
+# VS Code settings (optional, if you use VS Code)
+.vscode/
+
+# Environment variables
+.env
+
+# PyInstaller
+build/
+dist/
+*.spec
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/ 
